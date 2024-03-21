@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import CategorieInput from "./categorie-input";
+import FormButton from "./form-button";
 import { Button } from "./ui/button";
 import {
   Form,
@@ -200,7 +201,9 @@ function FormularAdaugaElev({ onFormSubmision }: FormularAdaugaElevProps) {
             </FormItem>
           )}
         />
-        <Button type="submit">Adaugă</Button>
+        <FormButton>
+          <Button type="submit">Adaugă</Button>
+        </FormButton>
       </form>
     </Form>
   );

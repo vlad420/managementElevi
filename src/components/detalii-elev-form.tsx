@@ -13,6 +13,7 @@ import ButonAdaugareRata from "./buton-adaugare-rata";
 import CategorieInput from "./categorie-input";
 import DatorieElev from "./datorie-elev";
 import DisplayRateElev from "./display-rate-elev";
+import FormButton from "./form-button";
 import { Button } from "./ui/button";
 import {
   Form,
@@ -78,9 +79,11 @@ function DetaliiElevForm({ elev }: Props) {
       >
         <div className="ml-auto">
           {editabil && (
-            <Button type="submit" variant={"destructive"}>
-              Salvează
-            </Button>
+            <FormButton>
+              <Button type="submit" variant={"destructive"}>
+                Salvează
+              </Button>
+            </FormButton>
           )}
           {!editabil && <Button onClick={handleEdit}>Editează</Button>}
 

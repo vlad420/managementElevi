@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Categorie, Elev } from "@prisma/client";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import FormButton from "./form-button";
 import { Button } from "./ui/button";
 import {
   Form,
@@ -153,9 +154,11 @@ function FormularAdaugareRata({ elev, onFormSubmision }: Props) {
           <Label>Observații</Label>
           <Textarea id="observatii" name="observatii" className="resize-none" />
         </div> */}
-        <Button className="ml-auto" type="submit">
-          Adaugă
-        </Button>
+        <FormButton>
+          <Button className="ml-auto" type="submit">
+            Adaugă
+          </Button>
+        </FormButton>
       </form>
     </Form>
   );
