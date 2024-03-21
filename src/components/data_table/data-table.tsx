@@ -1,6 +1,6 @@
 "use client";
 
-import { Elev } from "@prisma/client";
+import { ElevExtended } from "@/lib/types";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -25,8 +25,8 @@ import {
 } from "../ui/table";
 
 type DataTableProps = {
-  columns: ColumnDef<Elev>[];
-  data: Elev[];
+  columns: ColumnDef<ElevExtended>[];
+  data: ElevExtended[];
 };
 
 function DataTable({ columns, data }: DataTableProps) {

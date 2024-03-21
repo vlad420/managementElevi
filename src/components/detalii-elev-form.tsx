@@ -2,11 +2,10 @@
 
 import { updateElev } from "@/actions/actions";
 import { CATEGORII } from "@/lib/constants";
-import { TFormularDetaliiElev } from "@/lib/types";
+import { ElevExtended, TFormularDetaliiElev } from "@/lib/types";
 import { formatData } from "@/lib/utils";
 import { detaliiElevFormSchema } from "@/lib/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Categorie, Elev, Rata } from "@prisma/client";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -28,10 +27,7 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 
 type Props = {
-  elev: Elev & {
-    categorii: Categorie[];
-    rate: Rata[];
-  };
+  elev: ElevExtended;
 };
 
 function DetaliiElevForm({ elev }: Props) {

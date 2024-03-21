@@ -1,17 +1,13 @@
 "use client";
 
-import { Categorie, Elev, Rata } from "@prisma/client";
+import { ElevExtended } from "@/lib/types";
+import { Categorie } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-export const columns: ColumnDef<
-  Elev & {
-    categorii: Categorie[];
-    rate: Rata[];
-  }
->[] = [
+export const columns: ColumnDef<ElevExtended>[] = [
   {
     accessorKey: "nume",
     header: ({ column }) => (
