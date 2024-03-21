@@ -5,6 +5,8 @@ import DataTable from "@/components/data_table/data-table";
 import Title from "@/components/title";
 import { Toaster } from "@/components/ui/sonner";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const elevi = await getElevi();
   return (
