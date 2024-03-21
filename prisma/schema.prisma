@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Elev {
+  cnp           String      @id
+  nume          String
+  telefon       String
+  categorii     Categorie[]
+  totalDePlata  Int
+  avans         Int
+  rate          Rata[]
+  nota          String
+  dataInscriere DateTime    @default(now())
+  updateAt      DateTime    @updatedAt
+}
+
+model Categorie {
+  id          Int     @id @default(autoincrement())
+  label       String
+  instructor  String
+  redobandire Boolean
+
+  Elev    Elev   @relation(fields: [elevCnp], references: [cnp])
+  elevCnp String
+}
+
+model Rata {
+  id             Int      @id @default(autoincrement())
+  suma           Int
+  labelCategorie String
+  data           DateTime @default(now())
+  observatii     String
+
+  Elev    Elev   @relation(fields: [elevCnp], references: [cnp])
+  elevCnp String
+}
