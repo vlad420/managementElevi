@@ -110,7 +110,7 @@ function FormularAdaugaElev({ onFormSubmision }: FormularAdaugaElevProps) {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Categorii</FormLabel>
-              <div className="grid grid-cols-2 gap-y-2 gap-x-8">
+              <div className="grid md:grid-cols-2 gap-y-2 gap-x-8">
                 {CATEGORII.map((categorie) => (
                   <FormControl key={categorie.label}>
                     <CategorieInput
