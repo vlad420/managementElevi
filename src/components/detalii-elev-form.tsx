@@ -98,7 +98,7 @@ function DetaliiElevForm({ elev }: Props) {
             </Button>
           )}
         </div>
-        <div className="grid grid-cols-3 gap-x-2 gap-y-8">
+        <div className="grid grid-cols-3 gap-x-2 gap-y-8 whitespace-nowrap">
           <FormField
             control={form.control}
             name="nume"

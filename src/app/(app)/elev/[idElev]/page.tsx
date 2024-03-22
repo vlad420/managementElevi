@@ -14,6 +14,8 @@ type Props = {
 };
 
 async function Page({ params }: Props) {
+  // sleep for 10 seconds
+  // await new Promise((resolve) => setTimeout(resolve, 10000));
   const elev = await getElev(params.idElev);
   return (
     <>

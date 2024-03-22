@@ -20,7 +20,7 @@ function AdaugareElev() {
       <DialogTrigger asChild>
         <Button>Adaugă Elev</Button>
       </DialogTrigger>
-      <DialogContent className="overflow-y-auto max-h-screen">
+      <DialogContent className="overflow-y-auto max-h-dvh">
         <DialogHeader>
           <DialogTitle>Adaugă elev</DialogTitle>
 

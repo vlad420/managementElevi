@@ -62,7 +62,7 @@ function DataTable({ columns, data }: DataTableProps) {
 
   return (
     <>
-      <div className="w-72 py-4">
+      <div className="w-full md:w-72 py-4">
         <Input
           type="search"
           placeholder="Caută elev după nume, CNP sau telefon"

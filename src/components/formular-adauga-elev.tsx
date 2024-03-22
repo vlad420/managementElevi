@@ -104,6 +104,36 @@ function FormularAdaugaElev({ onFormSubmision }: FormularAdaugaElevProps) {
           )}
         />
 
+        <div className="flex gap-2">
+          <FormField
+            control={form.control}
+            name="totalDePlata"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Total de plată</FormLabel>
+                <FormControl>
+                  <Input {...field} type="number" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="avans"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Avans</FormLabel>
+                <FormControl>
+                  <Input {...field} type="number" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
         <FormField
           control={form.control}
           name="categorii"
@@ -152,36 +182,6 @@ function FormularAdaugaElev({ onFormSubmision }: FormularAdaugaElevProps) {
             </FormItem>
           )}
         />
-
-        <div className="flex gap-2">
-          <FormField
-            control={form.control}
-            name="totalDePlata"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Total de plată</FormLabel>
-                <FormControl>
-                  <Input {...field} type="number" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="avans"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Avans</FormLabel>
-                <FormControl>
-                  <Input {...field} type="number" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
 
         <FormField
           control={form.control}

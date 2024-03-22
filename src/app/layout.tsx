@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="ro" suppressHydrationWarning>
       <body className={`${inter.className}, flex flex-col justify-between`}>
         {/* <ThemeProvider attribute="class" defaultTheme="light" enableSystem> */}
-        <main className="container h-full overflow-hidden">{children}</main>
+        <main className="container h-dvh overflow-hidden">{children}</main>
         <Footer />
         {/* </ThemeProvider> */}
       </body>
