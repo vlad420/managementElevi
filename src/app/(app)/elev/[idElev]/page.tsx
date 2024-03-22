@@ -16,7 +16,7 @@ type Props = {
 async function Page({ params }: Props) {
   const elev = await getElev(params.idElev);
   return (
-    <main>
+    <>
       <div className="mb-12 mt-6 flex gap-6">
         <Button size="icon" variant="ghost" asChild>
           <Link href="/">
@@ -29,7 +29,7 @@ async function Page({ params }: Props) {
       <DetaliiElevForm elev={elev!} key={formatData(elev!.updateAt)} />
 
       <Toaster position="top-right" />
-    </main>
+    </>
   );
 }
 

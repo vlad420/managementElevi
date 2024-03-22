@@ -174,6 +174,24 @@ export async function adaugareRata(cnp: string, rata: unknown) {
     };
   }
 
+  if (rataValidata.data.labelCategorie === "Avans") {
+    try {
+      await prisma.elev.update({
+        where: { cnp },
+        data: {
+          avans: {
+            increment: rataValidata.data.suma,
+          },
+        },
+      });
+    } catch (error) {
+      return {
+        success: false,
+        message: "Eroare la actualizarea avansului",
+      };
+    }
+  }
+
   revalidatePath(`/elev/${cnp}`, "page");
 
   return {

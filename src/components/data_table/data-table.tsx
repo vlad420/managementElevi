@@ -39,7 +39,8 @@ function DataTable({ columns, data }: DataTableProps) {
     return data.filter((item) => {
       return (
         item.nume.toLowerCase().includes(searchValue.toLowerCase()) ||
-        item.cnp.toLowerCase().includes(searchValue.toLowerCase())
+        item.cnp.toLowerCase().includes(searchValue.toLowerCase()) ||
+        item.telefon.toLowerCase().includes(searchValue.toLowerCase())
       );
     });
   }, [data, searchValue]);
@@ -64,7 +65,7 @@ function DataTable({ columns, data }: DataTableProps) {
       <div className="w-72 py-4">
         <Input
           type="search"
-          placeholder="Caută elev după nume sau CNP"
+          placeholder="Caută elev după nume, CNP sau telefon"
           value={searchValue}
           onChange={(event) => setSearchValue(event.target.value)}
         />

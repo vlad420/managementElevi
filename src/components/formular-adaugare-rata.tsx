@@ -39,7 +39,10 @@ function FormularAdaugareRata({ elev, onFormSubmision }: Props) {
     resolver: zodResolver(rataDataSchema),
     defaultValues: {
       suma: 0,
-      labelCategorie: "",
+      labelCategorie:
+        elev.categorii.length === 1 && elev.avans > 0
+          ? elev.categorii[0].label
+          : "",
       observatii: "",
     },
   });
@@ -72,7 +75,7 @@ function FormularAdaugareRata({ elev, onFormSubmision }: Props) {
             name="suma"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Suma</FormLabel>
+                <FormLabel>Suma (RON)</FormLabel>
                 <FormControl>
                   <Input {...field} type="number" />
                 </FormControl>
@@ -86,7 +89,7 @@ function FormularAdaugareRata({ elev, onFormSubmision }: Props) {
             name="labelCategorie"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Categorie</FormLabel>
+                <FormLabel>Categoria</FormLabel>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
@@ -100,7 +103,7 @@ function FormularAdaugareRata({ elev, onFormSubmision }: Props) {
                     <SelectGroup>
                       <SelectLabel>Categoriile elevului</SelectLabel>
                       {elev.avans <= 0 && (
-                        <SelectItem value="avans">Avans</SelectItem>
+                        <SelectItem value="Avans">Avans</SelectItem>
                       )}
                       {elev.categorii.map((categorie) => (
                         <SelectItem key={categorie.id} value={categorie.label}>
@@ -114,28 +117,6 @@ function FormularAdaugareRata({ elev, onFormSubmision }: Props) {
               </FormItem>
             )}
           />
-
-          {/* <div className="space-y-2 w-full">
-            <Label htmlFor="nota">Categoria</Label>
-            <Select>
-              <SelectTrigger>
-                <SelectValue placeholder="Selectează categoria" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Categoriile elevului</SelectLabel>
-                  {elev.avans <= 0 && (
-                    <SelectItem value="avans">Avans</SelectItem>
-                  )}
-                  {elev.categorii.map((categorie) => (
-                    <SelectItem key={categorie.id} value={categorie.label}>
-                      {categorie.label}
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          </div> */}
         </div>
         <FormField
           control={form.control}
@@ -150,10 +131,7 @@ function FormularAdaugareRata({ elev, onFormSubmision }: Props) {
             </FormItem>
           )}
         />
-        {/* <div>
-          <Label>Observații</Label>
-          <Textarea id="observatii" name="observatii" className="resize-none" />
-        </div> */}
+
         <FormButton>
           <Button className="ml-auto" type="submit">
             Adaugă

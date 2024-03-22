@@ -15,10 +15,10 @@ model Elev {
   cnp           String      @id
   nume          String
   telefon       String
-  categorii     Categorie[]
+  categorii     Categorie[] @relation("ElevToCategorie")
   totalDePlata  Int
   avans         Int
-  rate          Rata[]
+  rate          Rata[]      @relation("ElevToRata")
   nota          String
   dataInscriere DateTime    @default(now())
   updateAt      DateTime    @updatedAt
@@ -30,7 +30,7 @@ model Categorie {
   instructor  String
   redobandire Boolean
 
-  Elev    Elev   @relation(fields: [elevCnp], references: [cnp])
+  Elev    Elev   @relation("ElevToCategorie", fields: [elevCnp], references: [cnp], onDelete: Cascade)
   elevCnp String
 }
 
@@ -41,6 +41,6 @@ model Rata {
   data           DateTime @default(now())
   observatii     String
 
-  Elev    Elev   @relation(fields: [elevCnp], references: [cnp])
+  Elev    Elev   @relation("ElevToRata", fields: [elevCnp], references: [cnp], onDelete: Cascade)
   elevCnp String
 }

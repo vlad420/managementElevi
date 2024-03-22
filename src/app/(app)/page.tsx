@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export default async function Home() {
   const elevi = await getElevi();
   return (
-    <main>
+    <>
       <div className="mb-12 mt-6">
         <Title>Elevi</Title>
       </div>
@@ -25,6 +25,6 @@ export default async function Home() {
       </div>
 
       <Toaster position="top-right" />
-    </main>
+    </>
   );
 }
