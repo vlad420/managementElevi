@@ -21,9 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" suppressHydrationWarning>
-      <body className={`${inter.className}, flex flex-col justify-between`}>
+      <body className={`${inter.className} flex flex-col`}>
         {/* <ThemeProvider attribute="class" defaultTheme="light" enableSystem> */}
-        <main className="container min-h-dvh overflow-hidden">{children}</main>
+        <main className="container flex-1 ">{children}</main>
         <Footer />
         {/* </ThemeProvider> */}
       </body>

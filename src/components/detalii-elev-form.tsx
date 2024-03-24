@@ -98,7 +98,7 @@ function DetaliiElevForm({ elev }: Props) {
             </Button>
           )}
         </div>
-        <div className="grid grid-cols-3 gap-x-2 gap-y-8 whitespace-nowrap">
+        <div className="md:grid space-y-4 md:space-y-0 md:grid-cols-3 md:gap-x-2 md:gap-y-8 md:whitespace-nowrap">
           <FormField
             control={form.control}
             name="nume"
@@ -141,7 +141,7 @@ function DetaliiElevForm({ elev }: Props) {
             )}
           />
 
-          <div className="row-start-2 col-start-1">
+          <div className="md:row-start-2 md:col-start-1">
             <FormField
               control={form.control}
               name="totalDePlata"
@@ -156,7 +156,7 @@ function DetaliiElevForm({ elev }: Props) {
               )}
             />
           </div>
-          <div className="row-start-2 col-start-2 space-y-2">
+          <div className="md:row-start-2 md:col-start-2 space-y-2">
             <Label>Datorie (RON)</Label>
             <DatorieElev elev={elev} />
 
@@ -174,7 +174,7 @@ function DetaliiElevForm({ elev }: Props) {
               )}
             /> */}
           </div>
-          <div className="row-start-3 col-start-1">
+          <div className="md:row-start-3 md:col-start-1">
             <FormField
               control={form.control}
               name="dataInscriere"
@@ -189,7 +189,7 @@ function DetaliiElevForm({ elev }: Props) {
               )}
             />
           </div>
-          <div className="row-start-3 col-start-2">
+          <div className="md:row-start-3 md:col-start-2">
             <FormField
               control={form.control}
               name="updateAt"
@@ -204,7 +204,7 @@ function DetaliiElevForm({ elev }: Props) {
               )}
             />
           </div>
-          <div className="row-start-4 col-start-1 col-span-full">
+          <div className="md:row-start-4 md:col-start-1 md:col-span-full">
             <FormField
               control={form.control}
               name="categorii"
@@ -259,14 +259,14 @@ function DetaliiElevForm({ elev }: Props) {
               )}
             />
           </div>
-          <div className="row-start-5 col-span-full">
+          <div className="md:row-start-5 md:col-span-full">
             <div className="flex items-center  justify-between">
               <Label>Rate</Label>
               <ButonAdaugareRata elev={elev} />
             </div>
             <DisplayRateElev rate={elev.rate} />
           </div>
-          <div className="row-start-6 col-span-full">
+          <div className="md:row-start-6 md:col-span-full">
             <FormField
               control={form.control}
               name="nota"

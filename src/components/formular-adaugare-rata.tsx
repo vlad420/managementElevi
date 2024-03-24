@@ -69,7 +69,7 @@ function FormularAdaugareRata({ elev, onFormSubmision }: Props) {
           onFormSubmision();
         }}
       >
-        <div className="flex gap-2">
+        <div className="md:flex md:gap-2 space-y-4 md:space-y-0">
           <FormField
             control={form.control}
             name="suma"
@@ -133,7 +133,7 @@ function FormularAdaugareRata({ elev, onFormSubmision }: Props) {
         />
 
         <FormButton>
-          <Button className="ml-auto" type="submit">
+          <Button className="md:ml-auto" type="submit">
             Adaugă
           </Button>
         </FormButton>
